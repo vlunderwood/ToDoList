@@ -21,10 +21,11 @@ public class ToDoList {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String title;
-	private LocalDate date;
-	private boolean completed;
+	//private LocalDate date;
+	private String completed;
 	
 	@OneToMany(mappedBy = "toDoList", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+
 	private List<Tasks> tasks;
 	
 	public ToDoList() {
@@ -43,16 +44,16 @@ public class ToDoList {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public LocalDate getDate() {
-		return date;
-	}
-	public void setDate(LocalDate date) {
-		this.date = date;
-	}
-	public boolean isCompleted() {
+	//public LocalDate getDate() {
+	//	return date;
+	//}
+	//public void setDate(LocalDate date) {
+	//	this.date = date;
+	//}
+	public String isCompleted() {
 		return completed;
 	}
-	public void setCompleted(boolean completed) {
+	public void setCompleted(String completed) {
 		this.completed = completed;
 	}
 	
@@ -65,7 +66,8 @@ public class ToDoList {
 	}
 	
 	public String toString() {
-		return  this.title + " Date: " +  this.date + " Completed: " + this.completed;
+		//return  this.title + " Date: " +  this.date + " Completed: " + this.completed;
+		return  this.title + " Completed: " + this.completed;
 	}
 	
 	
