@@ -43,5 +43,20 @@ public class TaskHelper {
 		manager.close();
 		return dbEntity;
 	}
+	
+	//method to update tasks
+	public void update(Tasks model) {
+		EntityManager manager = factory.createEntityManager();
+		model.setToDoList(toDoListHelper.searchToDoListByTitle(model.getToDoList().getTitle()));
+		Tasks dbEntity = manager.find(Tasks.class, model.getTaskId());
+		manager.getTransaction().begin();
+		dbEntity.setName(model.getName());
+		dbEntity.setDescription(model.getDescription());
+		dbEntity.setTaskCompleted(model.getTaskCompleted());
+		dbEntity.setToDoList(model.getToDoList());
+		manager.getTransaction().commit();
+		manager.close();
+		
+	}
 
 }
