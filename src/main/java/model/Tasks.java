@@ -17,7 +17,7 @@ public class Tasks {
 	private int taskId;
 	private String name;
 	private String description;
-	private boolean taskCompleted;
+	private String taskCompleted;
 	@ManyToOne
 	@JoinColumn(name = "ID", nullable=false)
 	private ToDoList toDoList = new ToDoList();
@@ -44,11 +44,19 @@ public class Tasks {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public boolean isTaskCompleted() {
+	public String isTaskCompleted() {
 		return taskCompleted;
 	}
-	public void setTaskCompleted(boolean taskCompleted) {
+	public void setTaskCompleted(String taskCompleted) {
 		this.taskCompleted = taskCompleted;
+	}
+	
+	public ToDoList getToDoList() {
+		return toDoList;
+	}
+
+	public void setToDoList(ToDoList toDoList) {
+		this.toDoList = toDoList;
 	}
 	
 	public String toString() {

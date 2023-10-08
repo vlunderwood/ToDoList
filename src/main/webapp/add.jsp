@@ -7,17 +7,17 @@
 <title>Add a Task</title>
 </head>
 <body>
-	<form action="addTask" method="post">
-		To Do List Title:<input
+	<form action="addTasks" method="post">
+		To Do List Name:<input
 			type="text" name="toDoListTitle" size="25"/> 
 		
 		Name: <input
 			type="text" name="name" size="25"/> 
-		z
+		
 		Description: <input
 			type="text" name="description" size="25"/> 
 		
-		Task Completed: <input
+		TaskCompleted: <input
 			type="text" name="taskCompleted" size="25"> 
 		<input type="submit"value="Submit" />
 	</form>

@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset=UTF-8">
-<title>Animal Data</title>
+<title>To Do List</title>
 </head>
 <body>
-	<h1>Animal Data</h1>
+	<h1>To Do List</h1>
 	<form action="showTasks" method="get">
 		<input type="submit" value="Show Tasks" />
 	</form>
