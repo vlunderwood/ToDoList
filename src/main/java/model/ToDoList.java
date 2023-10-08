@@ -25,7 +25,7 @@ public class ToDoList {
 	private boolean completed;
 	
 	@OneToMany(mappedBy = "toDoList", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private List<Task> tasks;
+	private List<Tasks> tasks;
 	
 	public ToDoList() {
 		super();
@@ -56,11 +56,11 @@ public class ToDoList {
 		this.completed = completed;
 	}
 	
-	public List<Task> getTasks() {
+	public List<Tasks> getTasks() {
 		return tasks;
 	}
 
-	public void setTasks(List<Task> tasks) {
+	public void setTasks(List<Tasks> tasks) {
 		this.tasks = tasks;
 	}
 	
