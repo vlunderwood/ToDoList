@@ -52,5 +52,15 @@ EntityManagerFactory factory = Persistence.createEntityManagerFactory("ToDoList"
 		
 	}
 	 
+	@SuppressWarnings("unchecked")
+	public List<ToDoList> showAllToDoList() {
+		EntityManager manager = factory.createEntityManager();
+		manager.clear();
+		Query q = manager.createQuery("SELECT i FROM toDoList i");
+		List<ToDoList> allItems = q.getResultList();
+		manager.close();
+		return allItems;
+		
+	}
 
 }
