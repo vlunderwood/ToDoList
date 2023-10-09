@@ -70,8 +70,7 @@ public class ToDoList {
 	}
 	
 	public String toString() {
-		//return  this.title + " Date: " +  this.date + " Completed: " + this.completed;
-		return  this.title + " Completed: " + this.completed;
+		return  this.title + " Date: " +  this.date + " Completed: " + this.completed;
 	}
 	
 	
