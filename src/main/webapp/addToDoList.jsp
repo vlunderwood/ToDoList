@@ -10,7 +10,7 @@
 <form action="addToDoList" method="post">
 		Title: <input
 			type="text" name="title" size="25"/> 
-		
+		Date: <input type="date" name="date"/> 
 		Completed: <input
 			type="text" name="completed" size="25"/> 
 		<input type="submit"value="Submit" />
