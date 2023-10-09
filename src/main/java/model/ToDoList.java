@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -14,6 +15,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import controllerToDoList.LocalDateAttributeConverter;
+
 @Entity(name = "toDoList")
 @Table(name = "toDoList")
 public class ToDoList {
@@ -21,7 +24,8 @@ public class ToDoList {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String title;
-	//private LocalDate date;
+    @Convert(converter = LocalDateAttributeConverter.class)
+    private LocalDate date;
 	private String completed;
 	
 	@OneToMany(mappedBy = "toDoList", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
@@ -44,12 +48,12 @@ public class ToDoList {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	//public LocalDate getDate() {
-	//	return date;
-	//}
-	//public void setDate(LocalDate date) {
-	//	this.date = date;
-	//}
+	public LocalDate getDate() {
+		return date;
+	}
+	public void setDate(LocalDate date) {
+		this.date = date;
+	}
 	public String getCompleted() {
 		return completed;
 	}
@@ -66,8 +70,7 @@ public class ToDoList {
 	}
 	
 	public String toString() {
-		//return  this.title + " Date: " +  this.date + " Completed: " + this.completed;
-		return  this.title + " Completed: " + this.completed;
+		return  this.title + " Date: " +  this.date + " Completed: " + this.completed;
 	}
 	
 	
