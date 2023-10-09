@@ -23,7 +23,7 @@ public class TaskHelper {
 		manager.close();
 
 	}
-	
+
 	// method to delete Task
 	public void delete(Tasks model) {
 		EntityManager manager = factory.createEntityManager();
@@ -32,8 +32,7 @@ public class TaskHelper {
 		manager.getTransaction().commit();
 		manager.close();
 	}
-	
-	
+
 	// method to search for tasks using JPQL query
 	public Tasks searchByTaskName(String oldName) {
 		EntityManager manager = factory.createEntityManager();
@@ -43,8 +42,8 @@ public class TaskHelper {
 		manager.close();
 		return dbEntity;
 	}
-	
-	//method to update tasks
+
+	// method to update tasks
 	public void update(Tasks model) {
 		EntityManager manager = factory.createEntityManager();
 		model.setToDoList(toDoListHelper.searchToDoListByTitle(model.getToDoList().getTitle()));
@@ -56,7 +55,17 @@ public class TaskHelper {
 		dbEntity.setToDoList(model.getToDoList());
 		manager.getTransaction().commit();
 		manager.close();
-		
+
+	}
+
+	// method to show animals using JPQL query
+	@SuppressWarnings("unchecked")
+	public List<Tasks> showAllTasks() {
+		EntityManager manager = factory.createEntityManager();
+		List<Tasks> allItems = manager.createQuery("SELECT i FROM tasks i").getResultList();
+		manager.close();
+		return allItems;
+
 	}
 
 }
