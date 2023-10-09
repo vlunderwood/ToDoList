@@ -40,6 +40,17 @@ EntityManagerFactory factory = Persistence.createEntityManagerFactory("ToDoList"
 		manager.close();
 		return dbEntity;
 	}
+	
+	public void update(ToDoList model) {
+		EntityManager manager = factory.createEntityManager();
+		ToDoList dbEntity = manager.find(ToDoList.class, model.getId());
+		manager.getTransaction().begin();
+		dbEntity.setTitle(model.getTitle());
+		dbEntity.setCompleted(model.getCompleted());
+		manager.getTransaction().commit();
+		manager.close();
+		
+	}
 	 
 
 }

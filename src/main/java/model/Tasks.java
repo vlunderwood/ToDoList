@@ -44,7 +44,7 @@ public class Tasks {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String isTaskCompleted() {
+	public String getTaskCompleted() {
 		return taskCompleted;
 	}
 	public void setTaskCompleted(String taskCompleted) {

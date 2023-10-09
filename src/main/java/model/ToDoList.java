@@ -50,7 +50,7 @@ public class ToDoList {
 	//public void setDate(LocalDate date) {
 	//	this.date = date;
 	//}
-	public String isCompleted() {
+	public String getCompleted() {
 		return completed;
 	}
 	public void setCompleted(String completed) {
