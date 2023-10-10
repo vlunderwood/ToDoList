@@ -1,5 +1,9 @@
 package helpers;
 
+/**
+ * @author valei - vlunderwood CIS175 - Fall 2023 Oct 03, 2023
+ */
+
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -15,6 +19,7 @@ import model.ToDoList;
 public class ToDoListHelper {
 EntityManagerFactory factory = Persistence.createEntityManagerFactory("ToDoList");
 	
+	//method to add todolist
 	public void add(ToDoList model) {
 		EntityManager manager = factory.createEntityManager();
 		manager.getTransaction().begin();
@@ -23,7 +28,7 @@ EntityManagerFactory factory = Persistence.createEntityManagerFactory("ToDoList"
 		manager.close();
 	}
 	
-	
+	//method to delete todolist
 	public void delete(ToDoList model) {
 		EntityManager manager = factory.createEntityManager();
 		manager.getTransaction().begin();
@@ -32,6 +37,7 @@ EntityManagerFactory factory = Persistence.createEntityManagerFactory("ToDoList"
 		manager.close();
 	}
 	  
+	//method to search for todolist using JPQL query
 	public ToDoList searchToDoListByTitle(String title) {
 		EntityManager manager = factory.createEntityManager();
 		TypedQuery<ToDoList> query = manager.createQuery("SELECT i FROM toDoList AS i WHERE i.title = :title", ToDoList.class);
@@ -41,6 +47,7 @@ EntityManagerFactory factory = Persistence.createEntityManagerFactory("ToDoList"
 		return dbEntity;
 	}
 	
+	//method to update todolist
 	public void update(ToDoList model) {
 		EntityManager manager = factory.createEntityManager();
 		ToDoList dbEntity = manager.find(ToDoList.class, model.getId());
@@ -52,6 +59,7 @@ EntityManagerFactory factory = Persistence.createEntityManagerFactory("ToDoList"
 		
 	}
 	 
+	// method to show todolist using JPQL query
 	@SuppressWarnings("unchecked")
 	public List<ToDoList> showAllToDoList() {
 		EntityManager manager = factory.createEntityManager();

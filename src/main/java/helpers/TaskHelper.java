@@ -58,7 +58,7 @@ public class TaskHelper {
 
 	}
 
-	// method to show animals using JPQL query
+	// method to show tasks using JPQL query
 	@SuppressWarnings("unchecked")
 	public List<Tasks> showAllTasks() {
 		EntityManager manager = factory.createEntityManager();
