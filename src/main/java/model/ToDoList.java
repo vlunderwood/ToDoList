@@ -1,6 +1,10 @@
 package model;
 
 
+/**
+ * @author valei - vlunderwood CIS175 - Fall 2023 Oct 03, 2023
+ */
+
 import java.time.LocalDate;
 import java.util.List;
 
@@ -20,6 +24,7 @@ import controllerToDoList.LocalDateAttributeConverter;
 @Entity(name = "toDoList")
 @Table(name = "toDoList")
 public class ToDoList {
+	//instance variables
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -32,10 +37,12 @@ public class ToDoList {
 
 	private List<Tasks> tasks;
 	
+	//no arg default constructor
 	public ToDoList() {
 		super();
 	}
 	
+	//getters and setters
 	public int getId() {
 		return id;
 	}

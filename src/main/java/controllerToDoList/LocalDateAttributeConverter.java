@@ -1,5 +1,9 @@
 package controllerToDoList;
 
+/**
+ * @author valei - vlunderwood CIS175 - Fall 2023 Oct 08, 2023
+ */
+
 import java.sql.Date;
 import java.time.LocalDate;
 import javax.persistence.AttributeConverter;
