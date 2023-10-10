@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="ISO-8859-1">
-    <title>Tasks</title>
+    <title>To Do Lists</title>
 </head>
 <body>
     List of all ToDoLists and Tasks:
