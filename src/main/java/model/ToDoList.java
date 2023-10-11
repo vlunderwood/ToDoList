@@ -2,7 +2,11 @@ package model;
 
 
 /**
- * @author valei - vlunderwood CIS175 - Fall 2023 Oct 03, 2023
+ * @author valei - vlunderwood CIS175 - Fall 2023 Oct 10, 2023
+ */
+
+/**
+ * @author Celyn - jvjohns CIS175 - Fall 2023 | Oct 10, 2023
  */
 
 import java.time.LocalDate;
